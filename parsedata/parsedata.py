@@ -25,6 +25,7 @@ class ParseData:
         self._filepath=path
         self._dataset=None
         self._labels=None
+        self._entry_data=None
 
 
     def parse_text(self):  # 无法应对缺省值
@@ -64,6 +65,7 @@ class ParseData:
             data = data.dropna()
             self._dataset=data.iloc[:, 0:-1].values
             self._labels=data.iloc[:, -1].values
+            self._entry_data=data.values
         else:
             raise FileTypeError('找不到对应读取格式')
 
@@ -78,6 +80,10 @@ class ParseData:
             self.parse_pandas()
         return self._labels
 
+    def entry_data(self):
+        if self._entry_data is None:
+            self.parse_pandas()
+        return self._entry_data
 
 def autonorm(dataset):
     minvals=dataset.min(0)

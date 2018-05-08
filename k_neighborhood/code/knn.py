@@ -1,9 +1,18 @@
-import pandas as pd
+'''
+classify:k-邻近算法分类器构造。
+'''
 import numpy as np
-import logging
+
 
 
 def classify(inX, dataset, labels, k):
+    '''
+    :param inX: 待测的参数，numpy。
+    :param dataset: 不含labels的numpy格式。
+    :param labels: 数据的答案列。
+    :param k: 算出距离排序之后，选择最近的k个点。
+    :return: 返回最近k个点中label占最多的作为结果返回
+    '''
     datasize = dataset.shape[0]
     print(datasize)
     diffmat = np.tile(inX, (datasize, 1)) - dataset

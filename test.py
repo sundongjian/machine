@@ -1,5 +1,6 @@
 
 import numpy
-a=numpy.array([1,-2,3,4,-5])
-b=numpy.array([1,2,3,5,5])
-print(numpy.sign(a)!=b)
+# aggclassest = numpy.mat(numpy.zeros((10, 1)))
+# print( numpy.mat(aggclassest)*numpy.mat(aggclassest).T)
+a=[[1,2],[1,2],[1,2],[1,2],[1,2]]
+print(numpy.mat(a))

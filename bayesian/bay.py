@@ -4,7 +4,6 @@ theory_trainnb0:求出理论上p(x|y)和p(y)的概率。选择非词袋模式
 actual_trainnb0：为防止溢出和防止0出现做出的处理
 classifyNB：最后的计算和比较
 test：将test放在模块里供外面的接口调用
-
 '''
 import numpy as np
 # from  math import log   不能直接应用 math 库里的东西到 ndarray 上,得用numpy中的函数。如np.exp

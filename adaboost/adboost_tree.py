@@ -27,7 +27,6 @@ def stumpclassify(datamatrix, dimen, threshval, inequal):
 
 def buildstump(dataarr, classlabels, D):
     '''
-
     :param dataarr: 数据集
     :param classlabels: 答案集
     :param D: 权重

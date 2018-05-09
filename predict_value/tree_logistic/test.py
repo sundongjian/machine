@@ -1,10 +1,7 @@
-import numpy
-import pandas
-
 from tree_logistic.cart_tree import creattree
-from tree_logistic.prune import prune
-from parsedata.parsedata import ParseData
 
+from parsedata.parsedata import ParseData
+from predict_value.tree_logistic.prune import prune
 
 file_path=r'F:\machine\file\hyxd_movie_01newdata4.xlsx'
 test_path=r'F:\machine\file\hyxd_movie_01newdata5.xlsx'

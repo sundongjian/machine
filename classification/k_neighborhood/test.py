@@ -1,8 +1,7 @@
 import numpy as np
 
-from k_neighborhood.code.knn import classify
+from classification.k_neighborhood.knn import classify
 from parsedata.parsedata import ParseData
-
 
 file_path=r'F:\machine\file\Book1.xlsx'
 file_path1=r'F:\machine\file\yob1893.txt'

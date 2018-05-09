@@ -5,7 +5,7 @@ prune：后剪枝函数
 '''
 from numpy import *
 
-from .cart_tree import splitdata
+from predict_value.tree_logistic.cart_tree import splitdata
 
 
 def is_tree(obj):

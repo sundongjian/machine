@@ -1,4 +1,4 @@
-from decision_tree.tree import createtree
+from classification.decision_tree.tree import createtree
 from parsedata.parsedata import ParseData
 
 file_path = r'F:\machine\file\Book1.xlsx'

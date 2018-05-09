@@ -1,8 +1,8 @@
 import numpy
 import pandas
 
-from adaboost.adboost_tree import adaclassify
-from adaboost.adboost_tree import addbosttrainds
+from classification.adaboost.adboost_tree import adaclassify
+from classification.adaboost.adboost_tree import addbosttrainds
 from parsedata.parsedata import ParseData
 
 inx=numpy.array([])

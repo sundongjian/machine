@@ -12,7 +12,7 @@ def standRegres(xArr, yArr):
     :return: 向量
     '''
     xMat = mat(xArr)
-    yMat = mat(yArr)
+    yMat = mat(yArr).T
     xTx = xMat.T * xMat
     if linalg.det(xTx) == 0.0:
         print('This matrix is  singular ,cannot do inverse')

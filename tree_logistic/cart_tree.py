@@ -25,7 +25,7 @@ def splitdata(dataset, feat, val):
     :param val: 最佳值
     :return: 左右叶
     '''
-    mt0 = dataset[nonzero(dataset[:, feat] > val)[0], :]  #参考书是错的
+    mt0 = dataset[nonzero(dataset[:, feat] > val)[0], :]  # 参考书是错的
     mt1 = dataset[nonzero(dataset[:, feat] <= val)[0], :]
     return mt0, mt1
 
@@ -44,7 +44,7 @@ def creattree(dataset, leafType=legleaf, errType=regErr, ops=(1, 4)):
     retTree = {}
     retTree['spind'] = feat
     retTree['spval'] = val
-    left_set, right_set = splitdata(dataset,feat, val)
+    left_set, right_set = splitdata(dataset, feat, val)
     retTree['left'] = creattree(left_set, leafType, errType, ops)
     retTree['right'] = creattree(right_set, leafType, errType, ops)
     return retTree
@@ -60,14 +60,14 @@ def choosebestsplit(dataset, leafType, errType, ops=(1, 4)):
     '''
     tols = ops[0]
     toln = ops[1]
-    if len(set(dataset[:, -1].T.tolist())) == 1:  #这个看起来有点奇怪，前面不用转置也没问题的
+    if len(set(dataset[:, -1].T.tolist())) == 1:  # 这个看起来有点奇怪，前面不用转置也没问题的
         return None, leafType(dataset)
     m, n = shape(dataset)
     s = errType(dataset)
     bests = inf
     bestindex = 0
     bestvalue = 0
-    for feat in range(0, n-1):  #这个刚才写错了，n是总列数，去掉答案类是n-1列，下标是n-2列
+    for feat in range(0, n - 1):  # 这个刚才写错了，n是总列数，去掉答案类是n-1列，下标是n-2列
         for splitval in set(dataset[:, feat]):
             mt0, mt1 = splitdata(dataset, feat, splitval)
             if shape(mt0)[0] < toln or shape(mt1)[0] < toln:

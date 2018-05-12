@@ -1,5 +1,8 @@
 ''''
 python中一个matrix矩阵名.A 代表将 矩阵转化为array数组类型
+distance:距离计算
+randcent：制造初始的几个质心
+kmeans：进行计算得到新质心
 '''
 import random
 from numpy import *
@@ -26,6 +29,13 @@ def randcent(database, k):
 
 
 def kmeans(database, k, distmean=distance, creatcen=randcent):
+    '''
+    :param database:
+    :param k: 需要的质心个数
+    :param distmean: 计算距离的函数
+    :param creatcen: 制造质心的函数
+    :return: 质心和 每行的质心误差表
+    '''
     m = shape(database)[1]
     cent = creatcen(database, k)
     record = mat(zeros((m, 2)))

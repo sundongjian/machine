@@ -9,12 +9,12 @@ a=[[0,2],[0,2],[0,0],[1,2],[1,2]]
 #da = ParseData(file_path)
 #data = da.dataset()
 
-
-b=numpy.array(a)
-print(numpy.nonzero())
-ma=b[numpy.nonzero(b[:,1]>0)[0],:]
-print(ma)
-
-
-l=[1,2,3,4]
-print([l])
+#
+# b=numpy.array(a)
+# print(numpy.nonzero())
+# ma=b[numpy.nonzero(b[:,1]>0)[0],:]
+# print(ma)
+#
+#
+# l=[1,2,3,4]
+# print([l])

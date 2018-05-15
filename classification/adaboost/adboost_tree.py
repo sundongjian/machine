@@ -82,15 +82,18 @@ def addbosttrainds(dataarr, classlabels, numlt=40):
     aggclassest = mat(zeros((m, 1)))
     for i in range(numlt):
         beststump, error, classest = buildstump(dataarr, classlabels, D)
-        alpha = float(0.5 * log(1.0 - error) / max(error, 1e-16))  # a=1/2ln((1-er)/er)  er为加权错误率
+        # a=1/2ln((1-er)/er)  er为加权错误率
+        alpha = float(0.5 * log(1.0 - error) / max(error, 1e-16))
         beststump['alpha'] = alpha
         weakclassarr.append(beststump)
         print('classest:', classest.T)
-        expon = multiply(-1 * alpha * mat(classlabels).T, classest)  # 区分正负号，正确分类为-a，错误分类为a，这种方式值得学习
+        # 区分正负号，正确分类为-a，错误分类为a，这种方式值得学习
+        expon = multiply(-1 * alpha * mat(classlabels).T, classest)
         D = multiply(D, exp(expon))
         D = D / D.sum()  # 下一轮迭代的D值
         aggclassest += alpha * classest  # 每次对a*最佳分类进行叠加
-        aggerror = multiply(sign(aggclassest) != mat(classlabels).T, ones((m, 1)))  # 计算叠加之后的最佳分类的错误，值得学习
+        # 计算叠加之后的最佳分类的错误，值得学习
+        aggerror = multiply(sign(aggclassest) != mat(classlabels).T, ones((m, 1)))
         errorrate = aggerror.sum() / m
         if errorrate == 0.0:
             break

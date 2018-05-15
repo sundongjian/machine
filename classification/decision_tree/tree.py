@@ -100,5 +100,6 @@ def createtree(dataset, labels):  # 这个labeis是特征名
     uniquevals = set(featvalues)
     for value in uniquevals:
         sublabels = labels[:]
-        mytree[bestfeat][value] = createtree(spiltdataset(dataset, bestfeat, value), sublabels)
+        mytree[bestfeat][value] = createtree(spiltdataset(dataset, bestfeat, value),
+                                             sublabels)
     return mytree

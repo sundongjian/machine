@@ -6,7 +6,7 @@ classifyNB：最后的计算和比较
 test：将test放在模块里供外面的接口调用
 '''
 import numpy as np
-# from  math import log   不能直接应用 math 库里的东西到 ndarray 上,得用numpy中的函数。如np.exp
+# from  math import log 不能直接应用 math 库里的东西到ndarray上,得用numpy中的函数如np.exp
 from numpy import log
 
 from parsedata.parsedata import ParseData
@@ -14,9 +14,10 @@ from parsedata.parsedata import ParseData
 
 def theory_trainnb0(dataset, labels):
     '''
-    :param dataset: 由每一个单词构成的单词矩阵，该文档出现该单词为1，没有为0.numpy格式，不含labels
+    :param dataset: 由每一个单词构成的单词矩阵，1,0表示有无。numpy格式，不含labels
     :param labels: 答案列，labels可以为numpy和list，消极为0，积极为1
-    :return: p0vect, p1vect, negative_prop, positive_prob 分别为消极概率向量，积极概率向量，消极先验概率，积极先验概率
+    :return: p0vect, p1vect, negative_prop, positive_prob 分别为消极概率向量，积极概率向量，
+            消极先验概率，积极先验概率
     '''
     index_num = len(dataset)
     feature_num = len(dataset[0])

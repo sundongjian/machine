@@ -60,7 +60,7 @@ def choosebestsplit(dataset, leafType, errType, ops=(1, 4)):
     '''
     tols = ops[0]
     toln = ops[1]
-    if len(set(dataset[:, -1].T.tolist())) == 1:  # 这个看起来有点奇怪，前面不用转置也没问题的
+    if len(set(dataset[:, -1].T.tolist())) == 1:  # 前面不用转置也没问题的
         return None, leafType(dataset)
     m, n = shape(dataset)
     s = errType(dataset)

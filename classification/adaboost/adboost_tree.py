@@ -1,7 +1,8 @@
 '''
 stumpclassify：将超过阈值的设为-1，其他为1
 buildstump：计算最佳分类列，该列最佳阈值和阈值符号，加权错误率
-addbosttrainds：根据返回的加权错误率计算alpha，然后计算D，继续进行迭代，直到达到指定次数或者错误率为0
+addbosttrainds：根据返回的加权错误率计算alpha，然后计算D，继续进行迭代，直到达到指定次数或者
+                错误率为0
 61行两个数据进行比较错误，两个数组维度不同
 比较问题解决，取labels的时候按照切片取，但是算weighterror时错误，具体见截图，今天先到这，坑很多
 '''
@@ -30,7 +31,7 @@ def buildstump(dataarr, classlabels, D):
     :param dataarr: 数据集
     :param classlabels: 答案集
     :param D: 权重
-    :return: beststump包含列，阈值和阈值符号的字典 minerror最小加权错误率  bestclassest最佳预测结果
+    :return: beststump包含列，阈值和阈值符号的字典 minerror最小错误率,bestclassest最佳预测
     '''
     datamatrix = mat(dataarr)
     classmat = mat(classlabels)
@@ -72,7 +73,8 @@ def addbosttrainds(dataarr, classlabels, numlt=40):
     :param dataarr: 数据集
     :param classlabels: 答案集
     :param numlt: 迭代次数
-    :return: 列表，该列表子元素为字典，每个字典都是一个弱分类器。字典记录了每次迭代最佳列，最佳阈值和阈值符号，alpha值
+    :return: 列表，该列表子元素为字典，每个字典都是一个弱分类器。字典记录了每次迭代最佳列，最
+            佳阈值和阈值符号，alpha值
     '''
     weakclassarr = []
     m = shape(dataarr)[0]

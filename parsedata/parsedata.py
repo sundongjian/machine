@@ -1,5 +1,5 @@
 '''
-ParseData:读取文件路径（文件格式：text、txt、xlsx、csv）返回numpy格式数据，数据以方法调用形式返回
+ParseData:读取文件路径（文件格式：text、txt、xlsx、csv）返回numpy格式数据，数据以方法调用
 autonorm：将numpy数据标准化
 '''
 import numpy as np
@@ -38,7 +38,8 @@ class ParseData:
             result.append(split_line)
         df = pd.DataFrame(result)
         filename = self._filepath.split('\\')[-1].split('.')[0]
-        self._filepath = r'F:\machine\file\outfile\%s%s.xlsx' % (filename, str(int(time.time())))
+        self._filepath = r'F:\machine\file\outfile\%s%s.xlsx' % \
+                         (filename, str(int(time.time())))
         print(self._filepath)
         df.to_excel(self._filepath)
 

@@ -19,6 +19,4 @@ a=[[0,2],[0,2],[0,0],[1,2],[1,2]]
 # l=[1,2,3,4]
 # print([l])
 
-b=[]
-if not b:
-    print('sd')
+from sklearn.naive_bayes import GaussianNB

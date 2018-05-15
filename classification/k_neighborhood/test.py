@@ -5,7 +5,6 @@ from parsedata.parsedata import ParseData
 
 file_path=r'F:\machine\file\Book1.xlsx'
 file_path1=r'F:\machine\file\yob1893.txt'
-
 da=ParseData(file_path)
 dataset=da.dataset()
 labels=da.labels()

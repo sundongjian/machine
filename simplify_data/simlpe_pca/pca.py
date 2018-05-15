@@ -2,6 +2,8 @@
 pca数据降维
 '''
 from numpy import *
+
+
 def pca(datamat, topNfeat=2):
     '''
     :param datamat:

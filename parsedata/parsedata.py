@@ -12,6 +12,8 @@ class FileTypeError(TypeError):
 
 
 class ParseData:
+
+
     def __init__(self, path):
         self._filepath = path
         self._dataset = None

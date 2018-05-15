@@ -4,7 +4,6 @@ classify:k-邻近算法分类器构造。
 import numpy as np
 
 
-
 def classify(inX, dataset, labels, k):
     '''
     :param inX: 待测的参数，numpy。

@@ -2,7 +2,6 @@
 论numpy中matrix 和 array的区别 https://blog.csdn.net/vincentlipan/article/details/20717163
 '''
 
-import numpy
 from numpy import *
 
 

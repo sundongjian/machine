@@ -1,7 +1,7 @@
+from numpy import *
 
 from parsedata.parsedata import ParseData
-from simplify_data.simlpe_pca.pca import pca
-from numpy import *
+
 
 
 def pa(datamat,topNfeat=2):

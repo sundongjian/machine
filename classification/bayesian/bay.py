@@ -12,7 +12,6 @@ from numpy import log
 from parsedata.parsedata import ParseData
 
 
-
 def theory_trainnb0(dataset, labels):
     '''
     :param dataset: 由每一个单词构成的单词矩阵，该文档出现该单词为1，没有为0.numpy格式，不含labels

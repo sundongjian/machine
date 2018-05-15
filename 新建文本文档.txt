@@ -1,3 +1,26 @@
 疑点：
 svd的将数据转换到新空间
 pca将数据转换到新空间
+
+sklearn中文文档入口http://cwiki.apachecn.org/pages/viewpage.action?pageId=10814387
+
+
+classification
+k邻近算法：
+from sklearn.neighbors import KNeighborsClassifier  参数:n
+决策树：
+from sklearn.tree import DecisionTreeClassifier
+朴素贝叶斯：（好像没有树上的这种简单贝叶斯，先用高斯贝叶斯代替一下）
+from sklearn.naive_bayes import GaussianNB
+线性回归：（这个是针对数值还是布尔）
+from sklearn.linear_model import LogisticRegression
+多分类器：
+from sklearn.ensemble import AdaBoostClassifier
+
+predict_value:
+
+unsupervised:
+
+
+
+

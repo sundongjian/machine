@@ -1,5 +1,3 @@
-
-
 from unsupervised.fp_growth.fp import createinitset,createtree
 
 

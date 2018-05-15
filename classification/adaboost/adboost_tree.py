@@ -51,7 +51,7 @@ def buildstump(dataarr, classlabels, D):
             # for j in range(-1, int(numstep)+1):  # 为什么要从-1开始？
             for inequal in ['lt', 'gt']:
                 threshval = range_low + stepsize * j
-                predictedval = stumpclassify(datamatrix, i, threshval, inequal)  # 这里要注意，什么是阈值，当inequal=lt的
+                predictedval = stumpclassify(datamatrix, i, threshval, inequal)
                 # 的时候，小于阈值的就是不满足条件的，设为-1
                 errmat = mat(ones((m, 1)))
                 errmat[predictedval == classmat] = 0
